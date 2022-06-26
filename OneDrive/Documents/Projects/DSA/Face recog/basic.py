@@ -19,6 +19,7 @@ face_loc_test = face_recognition.face_locations(testimg)[0]
 encodetest = face_recognition.face_encodings(testimg)[0]
 cv2.rectangle(testimg,(face_loc_test[3],face_loc_test[0]),(face_loc_test[1],face_loc_test[2]),(0,255,0),2)
 
+#comparing the face with the test face (in this case answer will be true)
 result = face_recognition.compare_faces([encodevijay],encodetest)
 face_dist = face_recognition.face_distance([encodevijay],encodetest)
 print(result)
