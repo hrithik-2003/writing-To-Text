@@ -39,7 +39,6 @@ def markAttendance(name):
     with open('Attendance.csv','r+') as f:
         datalist = f.readlines()
         nameList = []
-        print(datalist)
         for line in datalist:
             entry = line.split(',')
             nameList.append(entry[0])
@@ -49,8 +48,6 @@ def markAttendance(name):
             f.writelines(f'\n{name},{datestr}')
 
 
-
-markAttendance('Elon')
 
 encodings = find_encodings(images)
 
@@ -81,6 +78,7 @@ while True:
             cv2.rectangle(img,(x1,y1),(x2,y2),(255,0,0),1)
             cv2.rectangle(img,(x1,y2-35),(x2,y2),(255,0,0),cv2.FILLED)
             cv2.putText(img, name,(x1+6,y2-6),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255),1)
+            markAttendance(name)
 
 
                 
